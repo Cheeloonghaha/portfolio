@@ -1,0 +1,24 @@
+{
+  "name": "lee-chee-loong-portfolio",
+  "version": "1.0.0",
+  "description": "A single-page personal portfolio built with HTML, Tailwind CSS, and vanilla JavaScript, bundled with Vite.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Lee Chee Loong",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.6"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "aos": "^2.3.4"
+  }
+}

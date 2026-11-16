@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+/*
+  Tailwind v4 config lives in CSS instead of a separate tailwind.config.js.
+  @theme defines custom design tokens (used as bg-brand, text-brand, etc.)
+*/
+@theme {
+  --color-brand: #2563eb;
+  --color-brand-dark: #1d4ed8;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/*
+  Tailwind v4 defaults dark: to the OS-level prefers-color-scheme.
+  Our toggle (src/main.js) instead adds/removes a .dark class on <html>,
+  so we redefine the dark variant to follow that class.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ===== Background texture ===== */
+/* Soft dot-grid across the whole page, behind all content/sections */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.dark .bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* Large blurred color blobs used behind Hero/Contact for visual interest */
+.bg-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Nav links ===== */
+.nav-link {
+  color: #475569; /* slate-600 */
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: var(--color-brand);
+}
+.nav-link.active {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+.dark .nav-link {
+  color: #cbd5e1; /* slate-300 */
+}
+.dark .nav-link:hover {
+  color: #60a5fa; /* blue-400 */
+}
+.dark .nav-link.active {
+  color: #60a5fa; /* blue-400 */
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.5rem 0;
+  color: #475569;
+}
+.mobile-nav-link:hover {
+  color: var(--color-brand);
+}
+.dark .mobile-nav-link {
+  color: #cbd5e1;
+}
+.dark .mobile-nav-link:hover {
+  color: #60a5fa;
+}
+
+/* ===== Section title with accent bar ===== */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+}
+.section-title::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 9999px;
+  background: var(--color-brand);
+}
+
+/* ===== Cards shared by Skills / Projects / Achievements ===== */
+.skill-card,
+.project-card,
+.achievement-item {
+  background: #ffffff;
+  border: 2px solid #e2e8f0; /* slate-200 */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.skill-card:hover,
+.project-card:hover,
+.achievement-item:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(-6px);
+}
+.dark .skill-card:hover,
+.dark .project-card:hover,
+.dark .achievement-item:hover {
+  box-shadow: 0 0 40px rgba(219, 234, 254, 0.25); /* light blue glow, close to white */
+}
+.dark .skill-card,
+.dark .project-card,
+.dark .achievement-item {
+  background: #0f172a; /* slate-900 */
+  border-color: #334155; /* slate-700 */
+}
+
+.skill-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: #eff6ff; /* blue-50 */
+  color: var(--color-brand);
+  margin-bottom: 1rem;
+}
+.dark .skill-icon {
+  background: rgba(30, 58, 138, 0.4);
+  color: #93c5fd; /* blue-300 */
+}
+
+.skill-title {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #475569;
+}
+.dark .skill-list {
+  color: #cbd5e1;
+}
+
+/* ===== Project tags ===== */
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: #eff6ff; /* blue-50 */
+  color: var(--color-brand);
+}
+.dark .tag {
+  background: rgba(30, 58, 138, 0.4);
+  color: #93c5fd; /* blue-300 */
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+.project-link:hover {
+  text-decoration: underline;
+}
+.dark .project-link {
+  color: #60a5fa;
+}
+
+/* ===== Achievements ===== */
+.achievement-item {
+  font-weight: 500;
+}
+
+/* ===== Contact buttons ===== */
+.contact-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid #cbd5e1; /* slate-300 */
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.contact-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+.contact-btn:active {
+  transform: translateY(0);
+}
+.dark .contact-btn {
+  border-color: #334155;
+}
+.dark .contact-btn:hover {
+  background: #0f172a;
+}

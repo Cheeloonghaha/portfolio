@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lee Chee Loong | Software Engineer</title>
+<meta name="description" content="Portfolio of Lee Chee Loong, Software Engineering undergraduate and Software Engineer Intern." />
+
+<!--
+  Tailwind CSS, AOS, and the Inter font are all npm dependencies now (see
+  package.json), bundled by Vite through src/main.js - no CDN tags needed.
+-->
+</head>
+<body class="font-sans bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 bg-dot-grid">
+
+<!-- Scroll progress bar -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-brand z-[60]" style="width: 0%"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+  <nav class="max-w-5xl mx-auto px-5 flex items-center justify-between h-16">
+    <a href="#home" class="font-extrabold text-lg tracking-tight">Lee<span class="text-brand">.</span>dev</a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <li><a href="#about" data-nav="about" class="nav-link">About</a></li>
+      <li><a href="#skills" data-nav="skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" data-nav="experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" data-nav="projects" class="nav-link">Projects</a></li>
+      <li><a href="#education" data-nav="education" class="nav-link">Education</a></li>
+      <li><a href="#contact" data-nav="contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <!-- Dark mode toggle -->
+      <button id="theme-toggle" aria-label="Toggle dark mode"
+        class="w-9 h-9 grid place-items-center rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <svg id="icon-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5m0 15V21m8.25-9H21M3 12h1.5m14.16-6.66-1.06 1.06M6.4 17.6l-1.06 1.06m0-13.32L6.4 6.4m11.2 11.2 1.06 1.06M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z"/></svg>
+        <svg id="icon-moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+      </button>
+
+      <!-- Mobile menu button -->
+      <button id="menu-toggle" aria-label="Open menu" class="md:hidden w-9 h-9 grid place-items-center rounded-full border border-slate-300 dark:border-slate-700">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-5 pb-4 text-sm font-medium">
+    <li><a href="#about" class="mobile-nav-link">About</a></li>
+    <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+    <li><a href="#education" class="mobile-nav-link">Education</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+  </ul>
+</header>
+
+<main class="pt-16">
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="relative overflow-hidden">
+    <!-- Decorative blurred gradient blobs -->
+    <div class="bg-blob w-80 h-80 sm:w-[28rem] sm:h-[28rem] bg-brand/30 -top-24 -left-24"></div>
+    <div class="bg-blob w-72 h-72 sm:w-96 sm:h-96 bg-indigo-400/25 dark:bg-indigo-500/20 top-10 -right-20"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-5 min-h-[90vh] flex flex-col justify-center gap-6">
+    <p data-aos="fade-up" class="text-brand dark:text-blue-400 font-semibold tracking-wide">Hi, I'm</p>
+    <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+      Lee Chee Loong
+    </h1>
+    <h2 data-aos="fade-up" data-aos-delay="200" class="text-xl sm:text-2xl font-medium text-slate-500 dark:text-slate-400">
+      Software Engineer &mdash; Full-Stack
+    </h2>
+    <p data-aos="fade-up" data-aos-delay="300" class="max-w-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+      Software Engineering undergraduate at TAR UMT with hands-on experience building enterprise
+      applications using Java, Spring Boot, and Angular, plus cross-platform mobile apps with Flutter.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-4 pt-2">
+      <a href="%BASE_URL%assets/docs/Resume (Lee Chee Loong).pdf" download
+        class="px-6 py-3 rounded-full bg-brand hover:bg-brand-dark text-white font-semibold transition hover:scale-105 active:scale-95">
+        Download Resume
+      </a>
+      <a href="#contact"
+        class="px-6 py-3 rounded-full border border-slate-300 dark:border-slate-700 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        Get In Touch
+      </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="max-w-5xl mx-auto px-5 py-24">
+    <h3 data-aos="fade-up" class="section-title">About Me</h3>
+    <div class="grid md:grid-cols-3 gap-10 mt-10">
+      <div class="md:col-span-2 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+        <p>
+          I'm a Software Engineering undergraduate at Tunku Abdul Rahman University of Management and
+          Technology (TAR UMT), currently maintaining a GPA of 3.82. I recently completed a 6-month
+          Software Engineer internship, where I gained hands-on experience building and maintaining
+          enterprise applications &mdash; from backend APIs in Java and Spring Boot to frontend
+          interfaces in Angular.
+        </p>
+        <p>
+          Outside of enterprise development, I enjoy building things end-to-end on my own, including a
+          cross-platform productivity app built with Flutter and a terminal-based management system
+          built in Java. I'm always looking to pick up new tools and sharpen the ones I already use.
+        </p>
+      </div>
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="achievement-item">
+          <p class="text-sm text-slate-500 dark:text-slate-400">Location</p>
+          <p class="font-semibold">Kuala Lumpur, Malaysia</p>
+        </div>
+        <div class="achievement-item">
+          <p class="text-sm text-slate-500 dark:text-slate-400">Languages</p>
+          <p class="font-semibold">English, Mandarin, Malay</p>
+        </div>
+        <div class="achievement-item">
+          <p class="text-sm text-slate-500 dark:text-slate-400">Currently</p>
+          <p class="font-semibold">Open to Software Engineer roles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="bg-slate-50 dark:bg-slate-800/40 py-24">
+    <div class="max-w-5xl mx-auto px-5">
+      <h3 data-aos="fade-up" class="section-title">Skills</h3>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m14.25 9.75 1.5-1.5-1.5-1.5M9.75 6.75l-1.5 1.5 1.5 1.5M12 4.5v15m-6.75-15h13.5A2.25 2.25 0 0 1 21 6.75v10.5A2.25 2.25 0 0 1 18.75 19.5H5.25A2.25 2.25 0 0 1 3 17.25V6.75A2.25 2.25 0 0 1 5.25 4.5Z"/></svg>
+          </div>
+          <h4 class="skill-title">Languages</h4>
+          <ul class="skill-list">
+            <li>Java</li>
+            <li>Dart</li>
+            <li>JavaScript</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+          </div>
+          <h4 class="skill-title">Frameworks</h4>
+          <ul class="skill-list">
+            <li>Spring Boot</li>
+            <li>Hibernate / JPA</li>
+            <li>Angular</li>
+            <li>Flutter</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z"/></svg>
+          </div>
+          <h4 class="skill-title">Tools</h4>
+          <ul class="skill-list">
+            <li>Git &amp; GitHub</li>
+            <li>SQL Server</li>
+            <li>Figma</li>
+            <li>Postman</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <h4 class="skill-title">Practices</h4>
+          <ul class="skill-list">
+            <li>Agile / Scrum</li>
+            <li>REST API Design</li>
+            <li>Version Control</li>
+            <li>Code Review</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="max-w-5xl mx-auto px-5 py-24">
+    <h3 data-aos="fade-up" class="section-title">Experience</h3>
+
+    <div class="mt-10 space-y-10 border-l-2 border-slate-200 dark:border-slate-700 pl-8">
+
+      <div data-aos="fade-up" class="relative">
+        <span class="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-brand"></span>
+        <p class="text-sm text-slate-500 dark:text-slate-400">June 2026 &ndash; December 2026</p>
+        <h4 class="text-lg font-bold mt-1">Software Engineer Intern</h4>
+        <p class="text-brand dark:text-blue-400 font-medium">Theta Service Partner Sdn. Bhd.</p>
+        <ul class="list-disc list-inside mt-3 space-y-1 text-slate-600 dark:text-slate-300">
+          <li>Diagnosed and resolved production/staging defects across a modular Java/Spring Boot loan origination platform.</li>
+          <li>Redesigned a customer verification workflow, decoupling data prefill from database writes to eliminate incomplete records.</li>
+          <li>Refactored duplicate REST APIs and synchronised dependencies across multiple Java/Spring and Angular repositories, improving code reuse and patching security vulnerabilities.</li>
+          <li>Collaborated with business analysts and engineers through sprint planning, stand-ups, and code reviews in an Agile environment.</li>
+        </ul>
+      </div>
+
+      <div data-aos="fade-up" class="relative">
+        <span class="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+        <p class="text-sm text-slate-500 dark:text-slate-400">June 2022</p>
+        <h4 class="text-lg font-bold mt-1">F&amp;B Staff and Waiter</h4>
+        <p class="text-brand dark:text-blue-400 font-medium">Western Food Stall</p>
+        <ul class="list-disc list-inside mt-3 space-y-1 text-slate-600 dark:text-slate-300">
+          <li>Managed customer orders and system input in a fast-paced environment.</li>
+          <li>Maintained operational hygiene and supported back-of-house ingredient preparation.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="bg-slate-50 dark:bg-slate-800/40 py-24">
+    <div class="max-w-5xl mx-auto px-5">
+      <h3 data-aos="fade-up" class="section-title">Projects</h3>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-10">
+
+        <article data-aos="fade-up" class="project-card">
+          <div class="h-40 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 mb-5 grid place-items-center text-white font-bold text-xl">
+            GrowDuctive
+          </div>
+          <h4 class="text-lg font-bold">GrowDuctive</h4>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Productivity Mobile App &middot; Final Year Project &middot; March 2026</p>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            Cross-platform productivity application built with Flutter and Dart to streamline task
+            management and goal tracking, with Firebase/Firestore for authentication and real-time sync.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <a href="https://github.com/Cheeloonghaha/GrowDuctive" target="_blank" rel="noopener" class="project-link">
+            View on GitHub &rarr;
+          </a>
+        </article>
+
+        <article data-aos="fade-up" data-aos-delay="100" class="project-card">
+          <div class="h-40 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 mb-5 grid place-items-center text-white font-bold text-xl">
+            Job Management System
+          </div>
+          <h4 class="text-lg font-bold">Job Management System</h4>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Terminal-Based Java App &middot; April 2025</p>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            A Java terminal-based internship management system handling applicant tracking, job
+            postings, and interview scheduling, featuring a custom match engine that pairs applicants
+            with suitable job opportunities.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tag">Java</span>
+            <span class="tag">OOP</span>
+            <span class="tag">CLI</span>
+          </div>
+          <a href="https://github.com/Cheeloonghaha/Job_Management_System" target="_blank" rel="noopener" class="project-link">
+            View on GitHub &rarr;
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="max-w-5xl mx-auto px-5 py-24">
+    <h3 data-aos="fade-up" class="section-title">Education &amp; Achievements</h3>
+
+    <div class="grid md:grid-cols-2 gap-10 mt-10">
+      <div data-aos="fade-up" class="space-y-6">
+        <div>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Nov 2023 &ndash; Dec 2026</p>
+          <h4 class="font-bold">Bachelor of Software Engineering (Honours)</h4>
+          <p class="text-slate-600 dark:text-slate-300">Tunku Abdul Rahman University of Management and Technology &middot; GPA 3.82</p>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Nov 2022 &ndash; Oct 2023</p>
+          <h4 class="font-bold">Foundation in Compoter Science</h4>
+          <p class="text-slate-600 dark:text-slate-300">GPA 3.86</p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100" class="space-y-3">
+        <div class="achievement-item">🏆 Dean's List &mdash; 5 times</div>
+        <div class="achievement-item">🏆 President's List &mdash; 1 time</div>
+        <div class="achievement-item">🎓 MUET &mdash; Band 4.0</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="relative overflow-hidden bg-slate-50 dark:bg-slate-800/40 py-24">
+    <div class="bg-blob w-80 h-80 sm:w-[26rem] sm:h-[26rem] bg-brand/20 -bottom-32 left-1/2 -translate-x-1/2"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-5 text-center">
+      <h3 data-aos="fade-up" class="section-title justify-center">Get In Touch</h3>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-slate-600 dark:text-slate-300 mt-4 max-w-lg mx-auto">
+        I'm currently open to <strong class="font-bold text-slate-800 dark:text-slate-100">Software Engineer</strong> opportunities. Feel free to reach out &mdash; I'd love to hear from you.
+      </p>
+
+      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-wrap justify-center gap-4 mt-8">
+        <a href="mailto:cheeloong0524@gmail.com" class="contact-btn">✉️ Email</a>
+        <a href="tel:+60183932132" class="contact-btn">📞 Phone</a>
+        <a href="https://linkedin.com/in/chee-loong-lee-b21362343" target="_blank" rel="noopener" class="contact-btn">💼 LinkedIn</a>
+        <a href="https://github.com/Cheeloonghaha" target="_blank" rel="noopener" class="contact-btn">💻 GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="py-8 text-center text-sm text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800">
+  &copy; <span id="year"></span> Lee Chee Loong. Built with HTML, Tailwind CSS &amp; vanilla JavaScript.
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
